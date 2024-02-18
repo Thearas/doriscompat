@@ -7,6 +7,8 @@ DROP CAST (date AS integer);
 DROP OPERATOR || (boolean, boolean);
 DROP OPERATOR <=> (anyelement, anyelement);
 DROP OPERATOR && (boolean, boolean);
+DROP OPERATOR + (text, text);
+DROP FUNCTION _str_concat(text, text);
 DROP AGGREGATE group_concat(text);
 DROP AGGREGATE bit_xor(bigint);
 DROP FUNCTION yearweek(date);
