@@ -39,3 +39,18 @@ CREATE OPERATOR || (
   procedure = _or,
   commutator = || 
 );
+
+-- str + str
+-- string concat
+CREATE FUNCTION _str_concat(text, text)
+RETURNS text AS $$
+  SELECT $1 || $2
+$$ IMMUTABLE STRICT LANGUAGE SQL;
+
+CREATE OPERATOR + (
+  leftarg = text,
+  rightarg = text,
+  procedure = _str_concat,
+  commutator = +
+);
+
